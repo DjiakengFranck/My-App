@@ -1,2 +1,6 @@
 # My-App
-A simple booking website that stores your booking details (raw data) in an easy, stress-free flow. With a clean design and intuitive navigation, you can validate and submit your data.
+A simple booking website designed to make data handling easy and stress-free.
+
+- Stores your booking details (raw data)
+- Offers clean design and intuitive navigation
+- Lets you validate and submit your data quickly
