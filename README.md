@@ -1,21 +1,37 @@
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
 # My-App
-A Simple Booking Website 
->>>>>>> afb00976100beee9e431da97d51bcaa115f40063
+> A Simple Booking Website 
+
+# Simple Booking Website — Frontend Project Documentation
+
+Welcome to the **Simple Booking Website** frontend application repository. This project serves as a highly responsive, client-side web application designed to showcase service offerings and seamlessly process user bookings utilizing native browser storage structures.
+
+# Deployment & Project Links
+ **GitHub Repository Link:** [(https://github.com/DjiakengFranck/My-App.git)]
+
+---
+
+# Core Features & Technical Highlights
+
+# 1. Client-Side Persistence via Local Storage
+To provide fully functioning state preservation without requiring external database hosting setup for the reviewer, the application utilizes modern **Local Storage** integration:
+  **Persistent Form Input:** Captured user reservations are serialized into clean JSON strings and pushed straight to the browser environment storage.
+  **Session Stability:** Safeguards user configurations against accidental page refreshes and cleanly displays history tallies upon app reloading.
+
+### 2. Modern Responsive Design Layout
+The application interface scales elegantly across a wide variety of devices and viewport matrices:
+  Fluid adjustments for wide-aspect Desktop monitors, mid-sized tablets, and small screen smartphones.
+  Implements touch-friendly target elements and accessible navigation bars.
+
+---
+
+## Local Setup & Installation Instructions
+
+Please follow these standard instructions to run the application workspace in your local environment.
+
+### Prerequisites
+Ensure you have **Node.js** runtime environment installed.
+
+### 1. Fetch Dependencies
+Open your project directory in your local terminal window and load the dependencies:
+```bash
+npm install
