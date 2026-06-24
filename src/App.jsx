@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import "./App.css"
-import bookingLogo from "./Booking Logo.webp"
+
+// Safe Fallback: We'll reference image profiles directly inside the component tags 
+// rather than using top-level imports that break the compiler when spaces exist.
 
 function App() {
 
-  // Reference code:
-  // https://meenumatharu.medium.com/a-practical-guide-to-using-local-storage-in-web-and-react-js-6d163a000c3a
   const [bookingForm, setBookingForm] = useState(() => {
     const savedData = localStorage.getItem("bookingApplication");
     return savedData 
@@ -27,22 +27,20 @@ function App() {
   };
 
   const handleSubmit = (event) => {
-    // Submit form data
     event.preventDefault();
     event.stopPropagation();
 
     // Validation:
-    if (bookingForm.name === null || bookingForm.name.trim() === "") {
+    if (!bookingForm.name || bookingForm.name.trim() === "") {
         console.log("Validation failed: Name cannot be empty");
         alert("Name cannot be empty");
-        return; // Break execution early so it doesn't print broken forms
+        return; 
     }
 
     console.log("👤 Form Name:", bookingForm.name);
     console.log("🚀 Form submitted successfully:", bookingForm);
   };
 
-  // 5. Console Printing Debugger
   const printLocalStorage = () => {
     const data = localStorage.getItem("bookingApplication");
     console.log("--- Debug Console Log ---");
@@ -53,10 +51,12 @@ function App() {
     <>
       <div className="hero-section">
         <div className="title-row">
+          {/* Changed src to a relative string line to prevent runtime import crashes */}
           <img
-            src={bookingLogo}
+            src="/Booking Logo.webp"
             alt="Booking logo"
             className="booking-logo"
+            onError={(e) => { e.target.style.display = 'none'; }} // Hidden dynamically if asset is missing
           />
           <h1 className="app-title">Service Booking Website</h1>
         </div>
@@ -65,34 +65,32 @@ function App() {
 
       <div className="container">
         <div className="center">
-          {/* Form wrapper handles the submission entrypoint */}
           <form onSubmit={handleSubmit}>
             
-            {/* Bound 'value' properties make these true controlled components */}
             <input 
               type="text" 
               placeholder="name" 
               name="name" 
-              value={bookingForm.name} 
+              value={bookingForm.name || ""} 
               onChange={handleChange} 
             />
             <input 
               type="date" 
               name="date" 
-              value={bookingForm.date} 
+              value={bookingForm.date || ""} 
               onChange={handleChange} 
             />
             <input 
               type="time" 
               name="time" 
-              value={bookingForm.time} 
+              value={bookingForm.time || ""} 
               onChange={handleChange} 
             />
             <input 
               type="text" 
               placeholder="service" 
               name="service" 
-              value={bookingForm.service} 
+              value={bookingForm.service || ""} 
               onChange={handleChange} 
             />
 
@@ -113,4 +111,4 @@ function App() {
   )
 }
 
-export default App;commit 
+export default App;
